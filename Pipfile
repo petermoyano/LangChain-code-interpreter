@@ -8,6 +8,8 @@ python-dotenv = "*"
 langchain = "*"
 openai = "*"
 qrcode = "*"
+pandas = "*"
+tabulate = "*"
 
 [dev-packages]
 
