@@ -9,6 +9,7 @@ load_dotenv()
 
 def main():
     print("Start...")
+    # Combines a LLM and a tool to create a python agent
     python_agent_executor = create_python_agent(
         llm=ChatOpenAI(temperature=0, model="gpt-4",),
         tool=PythonREPLTool(),
@@ -16,9 +17,7 @@ def main():
         verbose=True
     )
 
-    # python_agent_executor.run(
-    #     "generate and save in the current working directory 2 QRcodes that point to https://www.linkedin.com/in/pedro-moyano, you have already installed the qrcode library, you can use it.")
-
+    # Comines a LLM and a tool to create a csv agent
     csv_agent = create_csv_agent(
         llm=ChatOpenAI(temperature=0, model="gpt-4",),
         path="episode_info.csv",
@@ -50,8 +49,8 @@ def main():
         verbose=True
     )
 
-    grand_agent.run(
-        "Generate and save in the current working directory 2 QRcodes that point to https://www.linkedin.com/in/pedro-moyano. You have qrcode package installed already. Use it.")
+    # grand_agent.run(
+    #     "Generate and save in the current working directory 2 QRcodes that point to https://www.linkedin.com/in/pedro-moyano. You have qrcode package installed already. Use it.")
 
 
 if __name__ == "__main__":
